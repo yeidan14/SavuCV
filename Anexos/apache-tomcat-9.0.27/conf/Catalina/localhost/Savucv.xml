@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context docBase="C:\Users\PC\Documents\NetBeansProjects\savucv-master\build\web" path="/Savucv">
+  <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="20" maxIdle="10" maxWait="-1" name="p" password="" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/prueba?zeroDateTimeBehavior=convertToNull" username="root"/>
+</Context>
