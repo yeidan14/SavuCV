@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="797" leftMargin="23" rightMargin="22" topMargin="21" bottomMargin="23" uuid="c40b5e5b-00a9-45c0-b240-2e82f2b3143c">
+	<property name="ireport.zoom" value="1.1000000000000003"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="mar" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     expelab.`id_explaboral` AS expelab_id_explaboral,
+     expelab.`Empresa` AS expelab_Empresa,
+     expelab.`TipoEmpresa` AS expelab_TipoEmpresa,
+     expelab.`PaisEmpresa` AS expelab_PaisEmpresa,
+     expelab.`DepEmpresa` AS expelab_DepEmpresa,
+     expelab.`MuniEmpresa` AS expelab_MuniEmpresa,
+     expelab.`CorreoEmp` AS expelab_CorreoEmp,
+     expelab.`Telefono` AS expelab_Telefono,
+     expelab.`FIngreso` AS expelab_FIngreso,
+     expelab.`FechaRetiro` AS expelab_FechaRetiro,
+     expelab.`Cargo` AS expelab_Cargo,
+     expelab.`Dependencia` AS expelab_Dependencia,
+     expelab.`Direccion` AS expelab_Direccion,
+     expelab.`usuario_usuario` AS expelab_usuario_usuario
+FROM
+     `expelab` expelab
+WHERE
+     usuario_usuario = $P{mar}]]>
+	</queryString>
+	<field name="expelab_id_explaboral" class="java.lang.Integer"/>
+	<field name="expelab_Empresa" class="java.lang.String"/>
+	<field name="expelab_TipoEmpresa" class="java.lang.String"/>
+	<field name="expelab_PaisEmpresa" class="java.lang.String"/>
+	<field name="expelab_DepEmpresa" class="java.lang.String"/>
+	<field name="expelab_MuniEmpresa" class="java.lang.String"/>
+	<field name="expelab_CorreoEmp" class="java.lang.String"/>
+	<field name="expelab_Telefono" class="java.lang.String"/>
+	<field name="expelab_FIngreso" class="java.lang.String"/>
+	<field name="expelab_FechaRetiro" class="java.lang.String"/>
+	<field name="expelab_Cargo" class="java.lang.String"/>
+	<field name="expelab_Dependencia" class="java.lang.String"/>
+	<field name="expelab_Direccion" class="java.lang.String"/>
+	<field name="expelab_usuario_usuario" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50">
+			<rectangle>
+				<reportElement x="0" y="2" width="797" height="48" forecolor="#003366" backcolor="#003366" uuid="9f58db9f-d65f-4e37-8318-b7cad4fdbba2"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="221" y="6" width="325" height="35" forecolor="#FFFFFF" uuid="c7ab614b-524d-4332-a564-042d41ec8b4e"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[EXPERIENCIA LABORAL]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="25">
+			<rectangle>
+				<reportElement x="0" y="0" width="797" height="20" backcolor="#006699" uuid="3b358704-8261-4b2b-9ea4-dfe902177ba6"/>
+			</rectangle>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="48" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="28" width="80" height="20" forecolor="#FFFFFF" backcolor="#003366" uuid="d9ba3031-5c80-4693-92f3-a1980cc15d1d"/>
+				<text><![CDATA[EMPRESA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="80" y="28" width="52" height="20" forecolor="#FFFFFF" backcolor="#003366" uuid="1f39982d-08fc-40a2-8d19-2b3772f885d5"/>
+				<text><![CDATA[T/EMPRESA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="132" y="28" width="52" height="20" forecolor="#FFFFFF" backcolor="#003366" uuid="c4970a91-e3f1-45a7-8741-819ad327206b"/>
+				<text><![CDATA[PAIS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="184" y="28" width="52" height="20" forecolor="#FFFFFF" backcolor="#003366" uuid="8b751eb5-84ef-4681-8d61-7d00a99dffca"/>
+				<text><![CDATA[DPTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="236" y="28" width="62" height="20" forecolor="#FFFFFF" backcolor="#003366" uuid="df65c156-3461-4517-8c7d-f4ed3eee8ff1"/>
+				<text><![CDATA[MUNICIPIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="298" y="28" width="62" height="20" forecolor="#FFFFFF" backcolor="#003366" uuid="d9b144a5-6b5a-4b89-af85-14f168bb93e2"/>
+				<text><![CDATA[CORREO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="360" y="28" width="62" height="20" forecolor="#FFFFFF" backcolor="#003366" uuid="ef2a6dd5-37f3-487c-ba9a-effb5eb90bc4"/>
+				<text><![CDATA[TELEFONO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="422" y="28" width="62" height="20" forecolor="#FFFFFF" backcolor="#003366" uuid="2711bbe2-875b-43c6-b068-11ff59d54bc3"/>
+				<text><![CDATA[INGRESO ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="484" y="28" width="62" height="20" forecolor="#FFFFFF" backcolor="#003366" uuid="85f1f99d-01ff-4728-97a0-b271eade5d15"/>
+				<text><![CDATA[RETIRO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="546" y="28" width="62" height="20" forecolor="#FFFFFF" backcolor="#003366" uuid="a4ecca3b-4731-4685-9e6c-7a2a67e7fdd7"/>
+				<text><![CDATA[CARGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="608" y="28" width="91" height="20" forecolor="#FFFFFF" backcolor="#003366" uuid="365c07e1-1ed3-4e68-9ee3-94c2d41755d4"/>
+				<text><![CDATA[DEPENDENCIA ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="699" y="28" width="98" height="20" forecolor="#FFFFFF" backcolor="#003366" uuid="8c937d8c-85e8-4df8-b65b-2680a9c171bd"/>
+				<text><![CDATA[DIRECCION]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="51" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="80" height="51" uuid="2ae1dec4-6a7d-4156-b994-1c48b047960d"/>
+				<textFieldExpression><![CDATA[$F{expelab_Empresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="0" width="52" height="51" uuid="6bf5a8db-d61b-4a59-970f-d863b71ea9ac"/>
+				<textFieldExpression><![CDATA[$F{expelab_TipoEmpresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="0" width="48" height="51" uuid="94891339-c8a3-4753-8a19-6c9f4e0640cd"/>
+				<textFieldExpression><![CDATA[$F{expelab_PaisEmpresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="184" y="0" width="52" height="51" uuid="d963db8b-b7ce-4bbd-9812-516daac474c2"/>
+				<textFieldExpression><![CDATA[$F{expelab_DepEmpresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="236" y="0" width="62" height="51" uuid="992c4bf7-c21e-4bdd-ab5a-b2feed171ba4"/>
+				<textFieldExpression><![CDATA[$F{expelab_MuniEmpresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="298" y="0" width="62" height="51" uuid="dcf4a71e-47df-4b84-85ff-32dfdf79f18a"/>
+				<textFieldExpression><![CDATA[$F{expelab_CorreoEmp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="363" y="2" width="62" height="20" uuid="1804263b-8c36-44fb-ad47-b570aa98df46"/>
+				<textFieldExpression><![CDATA[$F{expelab_Telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="422" y="0" width="62" height="39" uuid="769eeb91-d7fa-475c-9c1c-726731a2efb8"/>
+				<textFieldExpression><![CDATA[$F{expelab_FIngreso}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="484" y="2" width="62" height="49" uuid="7f2c1a4a-0716-487f-84c5-e4453f14ef6b"/>
+				<textFieldExpression><![CDATA[$F{expelab_FechaRetiro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="548" y="1" width="62" height="49" uuid="8f347377-4d56-4790-bb6f-147b009d7bda"/>
+				<textFieldExpression><![CDATA[$F{expelab_Cargo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="610" y="2" width="89" height="48" uuid="34b7b69e-2734-4efb-a3e4-c70e390270b8"/>
+				<textFieldExpression><![CDATA[$F{expelab_Dependencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="699" y="2" width="98" height="37" uuid="a2e88ccf-f374-4176-bb41-461c25d5173b"/>
+				<textFieldExpression><![CDATA[$F{expelab_Direccion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

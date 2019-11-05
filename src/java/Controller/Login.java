@@ -41,7 +41,7 @@ public class Login extends HttpServlet {
 
         Conexion con = Conexion.getConexion();
         UsuarioJpaController reg = new UsuarioJpaController(con.getBd());
-        Usuario bd = reg.findUsuario(usuario);
+        Usuario bd = reg.Buscaruser(usuario);
         try {
 
             if (reg.findUsuario(usuario) != null) {
@@ -60,7 +60,6 @@ public class Login extends HttpServlet {
                 String tipo = "NoExiste";
                     request.setAttribute("nombre", tipo);
                     request.getRequestDispatcher("index.jsp").forward(request, response);
-
             }
 
 //        

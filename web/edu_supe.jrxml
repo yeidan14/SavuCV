@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="567" leftMargin="14" rightMargin="14" topMargin="14" bottomMargin="14" uuid="dc2acefe-3283-4f3a-966a-870c1f71a328">
+	<property name="ireport.zoom" value="1.4641000000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="Table Dataset 1" uuid="27e80828-dc46-468f-aea3-0eb3c464d37d"/>
+	<parameter name="mar" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     ed_superior.`id` AS ed_superior_id,
+     ed_superior.`modalidad` AS ed_superior_modalidad,
+     ed_superior.`N_semestres` AS ed_superior_N_semestres,
+     ed_superior.`Graduado` AS ed_superior_Graduado,
+     ed_superior.`Nombre_titulo` AS ed_superior_Nombre_titulo,
+     ed_superior.`Terminacion` AS ed_superior_Terminacion,
+     ed_superior.`N_targeta` AS ed_superior_N_targeta,
+     ed_superior.`usuario_usuario` AS ed_superior_usuario_usuario
+FROM
+     `ed_superior` ed_superior
+WHERE
+     ed_superior.usuario_usuario = $P{mar}]]>
+	</queryString>
+	<field name="ed_superior_id" class="java.lang.Integer"/>
+	<field name="ed_superior_modalidad" class="java.lang.String"/>
+	<field name="ed_superior_N_semestres" class="java.lang.Integer"/>
+	<field name="ed_superior_Graduado" class="java.lang.String"/>
+	<field name="ed_superior_Nombre_titulo" class="java.lang.String"/>
+	<field name="ed_superior_Terminacion" class="java.lang.String"/>
+	<field name="ed_superior_N_targeta" class="java.lang.String"/>
+	<field name="ed_superior_usuario_usuario" class="java.lang.String"/>
+	<title>
+		<band height="50">
+			<rectangle>
+				<reportElement x="0" y="0" width="567" height="50" backcolor="#003366" uuid="826ca14a-b55d-4f82-8aba-ccb2d58f5897"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="131" y="11" width="315" height="39" forecolor="#FFFFFF" uuid="0b36681f-6b7f-432f-a816-936e2be4d229"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[EDUCACION SUPERIOR]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="26">
+			<rectangle>
+				<reportElement x="1" y="2" width="566" height="20" backcolor="#006699" uuid="56694e34-dc1e-4049-a537-9a29a9d926dc"/>
+			</rectangle>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="24">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="128" height="20" forecolor="#FFFFFF" backcolor="#003399" uuid="a76e6ef6-faa0-45d1-a887-2ea6b2d4fd15"/>
+				<text><![CDATA[MODALIDAD ACADEMICA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="131" y="0" width="87" height="20" forecolor="#FFFFFF" backcolor="#003399" uuid="93f63bee-0398-41b7-9649-6a245dfdcba9"/>
+				<text><![CDATA[# SEMESTRES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="220" y="0" width="65" height="20" forecolor="#FFFFFF" backcolor="#003399" uuid="77dd6511-8396-4e8a-b63e-28cbbb79cd5d"/>
+				<text><![CDATA[GRADUADO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="288" y="0" width="98" height="20" forecolor="#FFFFFF" backcolor="#003399" uuid="9c5fc398-d9b0-423e-911e-2e2d806b239c"/>
+				<text><![CDATA[TITULO OBTENIDO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="387" y="0" width="111" height="20" forecolor="#FFFFFF" backcolor="#003399" uuid="85dfff07-7734-4fd7-bfb0-de17aa49ecc7"/>
+				<text><![CDATA[FECHA TERMINACION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="499" y="0" width="68" height="20" forecolor="#FFFFFF" backcolor="#003399" uuid="c3df2522-e214-449c-b1fb-46a4ee15649f"/>
+				<text><![CDATA[TARGETA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="48" splitType="Stretch">
+			<textField>
+				<reportElement x="11" y="0" width="100" height="20" uuid="1a99a59d-d777-40ad-956a-6d10e71e99b6"/>
+				<textFieldExpression><![CDATA[$F{ed_superior_modalidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="155" y="0" width="87" height="20" uuid="cc32e808-b81d-4db9-8ffa-449a3987453d"/>
+				<textFieldExpression><![CDATA[$F{ed_superior_N_semestres}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="242" y="0" width="66" height="20" uuid="c754b0af-cfca-4711-8973-1c680e147e4e"/>
+				<textFieldExpression><![CDATA[$F{ed_superior_Graduado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="293" y="0" width="93" height="47" uuid="4060e82d-f4b2-4f60-a7fd-ff24b6dce21a"/>
+				<textFieldExpression><![CDATA[$F{ed_superior_Nombre_titulo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="0" width="100" height="20" uuid="a23c3b3a-c43d-4432-b1de-306705fc3fe1"/>
+				<textFieldExpression><![CDATA[$F{ed_superior_Terminacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="499" y="0" width="68" height="47" uuid="4727f369-93d8-4c72-8052-cdb38bd2b772"/>
+				<textFieldExpression><![CDATA[$F{ed_superior_N_targeta}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="51">
+			<staticText>
+				<reportElement x="186" y="14" width="179" height="20" uuid="80dd43ed-0473-4cc1-9d64-42296c9ca8fb"/>
+				<text><![CDATA[DESARROLLADO POR SAVUCV]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<noData>
+		<band height="50"/>
+	</noData>
+</jasperReport>

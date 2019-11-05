@@ -124,15 +124,38 @@ src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
                 <!-- page content  "-->
                 <div class="right_col" role="main">
                     <div class="row">
+
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
                             <%
                     Conexion con = Conexion.getConexion();
                     DatosperJpaController datos = new DatosperJpaController(con.getBd());
                     String usuario = (String) session.getAttribute("usuario");
-                    boolean v = datos.vacio(usuario);
-
-                    if (v == true) {
+                    boolean v = datos.vacio(usuario);%>
+                   <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                    <form  name="form1" action="pdf.jsp" target="_black" >
+                        <input  style="display: none" type="text" value="<%=usuario%>" name ="txtparametro" />
+                        <input class=" btn btn-success btn-round  " type="submit" value="Generar PDF DATOS " />
+                    </form></div>
+                        <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                    <form  name="form1" action="pdfsupe.jsp" target="_black" >
+                        <input  style="display: none" type="text" value="<%=usuario%>" name ="txtparametro" />
+                        <input class=" btn btn-success btn-round " type="submit" value="Generar PDF EDUCACION SUPERIOR" />
+                    </form></div>
+                        
+                        <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                        <form  name="form1" action="pdfidioma.jsp" target="_black" >
+                        <input  style="display: none" type="text" value="<%=usuario%>" name ="txtparametro" />
+                        <input class=" btn btn-success btn-round  " type="submit" value="Generar PDF IDIOMAS" />
+                        </form></div>
+                        <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+                        <form  name="form1" action="pdfexpe.jsp" target="_black" >
+                        <input  style="display: none" type="text" value="<%=usuario%>" name ="txtparametro" />
+                        <input class=" btn btn-success btn-round  " type="submit" value="Generar PDF EXPERIENCIA LABORAL" />
+                       </form>
+                        
+                    </div>
+                   <% if (v == true) {
                 %>
                 
                   

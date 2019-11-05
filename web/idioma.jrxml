@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="373fb16c-f725-46bd-ba9f-febf0045779d">
+	<property name="ireport.zoom" value="1.4641000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="mar" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     idioma.`idlengua` AS idioma_idlengua,
+     idioma.`nombre_idioma` AS idioma_nombre_idioma,
+     idioma.`lo_habla` AS idioma_lo_habla,
+     idioma.`lo_lee` AS idioma_lo_lee,
+     idioma.`lo_escribe` AS idioma_lo_escribe,
+     idioma.`usuario_usuario` AS idioma_usuario_usuario
+FROM
+     `idioma` idioma
+WHERE
+     usuario_usuario = $P{mar}]]>
+	</queryString>
+	<field name="idioma_idlengua" class="java.lang.Integer"/>
+	<field name="idioma_nombre_idioma" class="java.lang.String"/>
+	<field name="idioma_lo_habla" class="java.lang.String"/>
+	<field name="idioma_lo_lee" class="java.lang.String"/>
+	<field name="idioma_lo_escribe" class="java.lang.String"/>
+	<field name="idioma_usuario_usuario" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="79" backcolor="#003366" uuid="af318a37-fbf6-409e-a2a0-2a4f14f8e8fa"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="220" y="27" width="218" height="41" forecolor="#FFFFFF" uuid="390b3c83-e43c-484b-b16f-827876dfe268"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[IDIOMAS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="12" width="555" height="23" backcolor="#006699" uuid="aff197a0-c248-4b25-aa17-c494171983ed"/>
+			</rectangle>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="39" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="19" y="7" width="121" height="20" forecolor="#FFFFFF" backcolor="#003399" uuid="01b97e20-c228-4498-ba69-353c44dc94b2"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[NOMBRE IDIOMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="164" y="9" width="121" height="20" forecolor="#FFFFFF" backcolor="#003399" uuid="46697bb7-a94e-4b9e-a06d-5fcdb40e09d5"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[LO HABLA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="297" y="9" width="121" height="20" forecolor="#FFFFFF" backcolor="#003399" uuid="ab24ff8d-89d4-4bd4-909d-302ac54e152a"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[LO LEEE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="427" y="9" width="121" height="20" forecolor="#FFFFFF" backcolor="#003399" uuid="d36538a5-36b8-4225-94f8-bde344cf2272"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[LO ESCRIBE]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="40" y="0" width="100" height="20" uuid="359a42cf-ec26-4bd3-9a97-800a72d8d32c"/>
+				<textFieldExpression><![CDATA[$F{idioma_nombre_idioma}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="168" y="1" width="100" height="20" uuid="0e70f23a-db9b-434e-9c22-4d292b6604ea"/>
+				<textFieldExpression><![CDATA[$F{idioma_lo_habla}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="305" y="0" width="100" height="20" uuid="d8a4c342-ad66-44fa-9c6a-8768a599b3d6"/>
+				<textFieldExpression><![CDATA[$F{idioma_lo_lee}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="438" y="0" width="100" height="20" uuid="6247d649-469e-42b8-9f51-551f99a21b3a"/>
+				<textFieldExpression><![CDATA[$F{idioma_lo_escribe}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="60" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="202" y="21" width="156" height="20" uuid="d9ff0331-7683-452b-a191-f7fef8571119"/>
+				<text><![CDATA[DESARROLLADO POR SAVUCV]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

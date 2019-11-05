@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1e63bad2-964e-40b1-a1ec-651bcbce85e4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="user" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     expelab.`id_explaboral` AS expelab_id_explaboral,
+     expelab.`Empresa` AS expelab_Empresa,
+     expelab.`TipoEmpresa` AS expelab_TipoEmpresa,
+     expelab.`PaisEmpresa` AS expelab_PaisEmpresa,
+     expelab.`DepEmpresa` AS expelab_DepEmpresa,
+     expelab.`MuniEmpresa` AS expelab_MuniEmpresa,
+     expelab.`CorreoEmp` AS expelab_CorreoEmp,
+     expelab.`Telefono` AS expelab_Telefono,
+     expelab.`FIngreso` AS expelab_FIngreso,
+     expelab.`FechaRetiro` AS expelab_FechaRetiro,
+     expelab.`Cargo` AS expelab_Cargo,
+     expelab.`Dependencia` AS expelab_Dependencia,
+     expelab.`Direccion` AS expelab_Direccion,
+     expelab.`usuario_usuario` AS expelab_usuario_usuario
+FROM
+     `expelab` expelab
+WHERE
+     usuario_usuario = $P{user}]]>
+	</queryString>
+	<field name="expelab_id_explaboral" class="java.lang.Integer"/>
+	<field name="expelab_Empresa" class="java.lang.String"/>
+	<field name="expelab_TipoEmpresa" class="java.lang.String"/>
+	<field name="expelab_PaisEmpresa" class="java.lang.String"/>
+	<field name="expelab_DepEmpresa" class="java.lang.String"/>
+	<field name="expelab_MuniEmpresa" class="java.lang.String"/>
+	<field name="expelab_CorreoEmp" class="java.lang.String"/>
+	<field name="expelab_Telefono" class="java.lang.String"/>
+	<field name="expelab_FIngreso" class="java.lang.String"/>
+	<field name="expelab_FechaRetiro" class="java.lang.String"/>
+	<field name="expelab_Cargo" class="java.lang.String"/>
+	<field name="expelab_Dependencia" class="java.lang.String"/>
+	<field name="expelab_Direccion" class="java.lang.String"/>
+	<field name="expelab_usuario_usuario" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="52" splitType="Stretch">
+			<textField>
+				<reportElement x="11" y="0" width="148" height="39" uuid="e83a422e-b821-48ff-a26d-97242e704d8a"/>
+				<textFieldExpression><![CDATA[$F{expelab_Empresa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -5,6 +5,7 @@
  */
 package Dao;
 
+import Controller.Conexion;
 import Dao.exceptions.IllegalOrphanException;
 import Dao.exceptions.NonexistentEntityException;
 import Dao.exceptions.PreexistingEntityException;
@@ -23,6 +24,9 @@ import java.util.List;
 import Dto.EdSuperior;
 import Dto.Idioma;
 import Dto.Usuario;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
@@ -358,6 +362,31 @@ public class UsuarioJpaController implements Serializable {
                 em.close();
             }
         }
+    }
+    
+    public Usuario Buscaruser(String Usuario) {
+       Connection cn=Conexion.getConexion2();
+       Usuario u=new Usuario();
+        try {
+            String sql = "SELECT * FROM usuario"; 
+            PreparedStatement pstm = cn.prepareStatement(sql);
+            ResultSet rs = pstm.executeQuery();
+            
+            while(rs.next()){
+             if(rs.getString("usuario").equals(Usuario)){
+                String nombre = rs.getString(1);
+                String email = rs.getString(2);
+                String pas=rs.getString(3);
+            
+                u.setUsuario(nombre);
+                u.setEmail(email);
+                u.setPassword(pas);
+             }
+            }
+            
+        } catch (Exception e) {
+        }
+        return u;
     }
 
     public void destroy(String id) throws IllegalOrphanException, NonexistentEntityException {

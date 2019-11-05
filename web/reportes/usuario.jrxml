@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="usuario" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="BlankPage" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b233930f-c730-4d86-8573-c075795a2e99">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="nuevo" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[true]]></defaultValueExpression>
+	</parameter>
+	<parameter name="user" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\PC\\Documents\\NetBeansProjects\\SavuCV-master\\web\\reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     datosper.`nombres` AS datosper_nombres,
+     datosper.`oneapellido` AS datosper_oneapellido,
+     datosper.`twoapellido` AS datosper_twoapellido,
+     datosper.`Tipo_documento` AS datosper_Tipo_documento,
+     datosper.`N_documento` AS datosper_N_documento,
+     datosper.`Persona_genero` AS datosper_Persona_genero,
+     datosper.`Nacionalidad` AS datosper_Nacionalidad,
+     datosper.`Pais_nacionalidad` AS datosper_Pais_nacionalidad,
+     datosper.`tipo_libreta` AS datosper_tipo_libreta,
+     datosper.`numero_libreta` AS datosper_numero_libreta,
+     datosper.`dm_libreta` AS datosper_dm_libreta,
+     datosper.`Fecha_naciemiento` AS datosper_Fecha_naciemiento,
+     datosper.`Pais_nacimiento` AS datosper_Pais_nacimiento,
+     datosper.`Depto_naciemiento` AS datosper_Depto_naciemiento,
+     datosper.`Municipio_nacimiento` AS datosper_Municipio_nacimiento,
+     datosper.`Direccion_corresp` AS datosper_Direccion_corresp,
+     datosper.`Pais_correspo` AS datosper_Pais_correspo,
+     datosper.`Mun_correspo` AS datosper_Mun_correspo,
+     datosper.`Dpto_correspo` AS datosper_Dpto_correspo,
+     datosper.`Telefono` AS datosper_Telefono,
+     datosper.`Email` AS datosper_Email,
+     datosper.`usuario_usuario` AS datosper_usuario_usuario,
+     ed_superior.`id` AS ed_superior_id,
+     ed_superior.`modalidad` AS ed_superior_modalidad,
+     ed_superior.`N_semestres` AS ed_superior_N_semestres,
+     ed_superior.`Graduado` AS ed_superior_Graduado,
+     ed_superior.`Nombre_titulo` AS ed_superior_Nombre_titulo,
+     ed_superior.`Terminacion` AS ed_superior_Terminacion,
+     ed_superior.`N_targeta` AS ed_superior_N_targeta,
+     ed_superior.`usuario_usuario` AS ed_superior_usuario_usuario,
+     expelab.`id_explaboral` AS expelab_id_explaboral,
+     expelab.`Empresa` AS expelab_Empresa,
+     expelab.`TipoEmpresa` AS expelab_TipoEmpresa,
+     expelab.`PaisEmpresa` AS expelab_PaisEmpresa,
+     expelab.`DepEmpresa` AS expelab_DepEmpresa,
+     expelab.`MuniEmpresa` AS expelab_MuniEmpresa,
+     expelab.`CorreoEmp` AS expelab_CorreoEmp,
+     expelab.`Telefono` AS expelab_Telefono,
+     expelab.`FIngreso` AS expelab_FIngreso,
+     expelab.`FechaRetiro` AS expelab_FechaRetiro,
+     expelab.`Cargo` AS expelab_Cargo,
+     expelab.`Dependencia` AS expelab_Dependencia,
+     expelab.`Direccion` AS expelab_Direccion,
+     expelab.`usuario_usuario` AS expelab_usuario_usuario,
+     fbasica.`Ncurso` AS fbasica_Ncurso,
+     fbasica.`Titulo` AS fbasica_Titulo,
+     fbasica.`Bfecha_grado` AS fbasica_Bfecha_grado,
+     fbasica.`usuario_usuario` AS fbasica_usuario_usuario,
+     idioma.`idlengua` AS idioma_idlengua,
+     idioma.`nombre_idioma` AS idioma_nombre_idioma,
+     idioma.`lo_habla` AS idioma_lo_habla,
+     idioma.`lo_lee` AS idioma_lo_lee,
+     idioma.`lo_escribe` AS idioma_lo_escribe,
+     idioma.`usuario_usuario` AS idioma_usuario_usuario,
+     idioma_A.`idlengua` AS idioma_A_idlengua,
+     idioma_A.`nombre_idioma` AS idioma_A_nombre_idioma,
+     idioma_A.`lo_habla` AS idioma_A_lo_habla,
+     idioma_A.`lo_lee` AS idioma_A_lo_lee,
+     idioma_A.`lo_escribe` AS idioma_A_lo_escribe,
+     idioma_A.`usuario_usuario` AS idioma_A_usuario_usuario,
+     obervaciones.`Obervacionescol` AS obervaciones_Obervacionescol,
+     obervaciones.`ciudad` AS obervaciones_ciudad,
+     obervaciones.`fecha` AS obervaciones_fecha,
+     obervaciones.`usuario_usuario` AS obervaciones_usuario_usuario,
+     tiemexp.`usuario_usuario` AS tiemexp_usuario_usuario,
+     tiemexp.`spublicoyears` AS tiemexp_spublicoyears,
+     tiemexp.`spublicomonths` AS tiemexp_spublicomonths,
+     tiemexp.`sprivadoyears` AS tiemexp_sprivadoyears,
+     tiemexp.`sprivadomonths` AS tiemexp_sprivadomonths,
+     tiemexp.`tiyears` AS tiemexp_tiyears,
+     tiemexp.`timonths` AS tiemexp_timonths,
+     tiemexp.`totalyears` AS tiemexp_totalyears,
+     tiemexp.`toalmonths` AS tiemexp_toalmonths,
+     usuario.`usuario` AS usuario_usuario,
+     usuario.`email` AS usuario_email,
+     usuario.`password` AS usuario_password
+FROM
+     `usuario` usuario INNER JOIN `datosper` datosper ON usuario.`usuario` = datosper.`usuario_usuario`
+     INNER JOIN `ed_superior` ed_superior ON usuario.`usuario` = ed_superior.`usuario_usuario`
+     INNER JOIN `expelab` expelab ON usuario.`usuario` = expelab.`usuario_usuario`
+     INNER JOIN `fbasica` fbasica ON usuario.`usuario` = fbasica.`usuario_usuario`
+     INNER JOIN `idioma` idioma ON usuario.`usuario` = idioma.`usuario_usuario`
+     INNER JOIN `obervaciones` obervaciones ON usuario.`usuario` = obervaciones.`usuario_usuario`
+     INNER JOIN `tiemexp` tiemexp ON usuario.`usuario` = tiemexp.`usuario_usuario`,
+     `idioma` idioma_A
+WHERE
+     usuario = $P{user}]]>
+	</queryString>
+	<field name="datosper_nombres" class="java.lang.String"/>
+	<field name="datosper_oneapellido" class="java.lang.String"/>
+	<field name="datosper_twoapellido" class="java.lang.String"/>
+	<field name="datosper_Tipo_documento" class="java.lang.String"/>
+	<field name="datosper_N_documento" class="java.lang.String"/>
+	<field name="datosper_Persona_genero" class="java.lang.String"/>
+	<field name="datosper_Nacionalidad" class="java.lang.String"/>
+	<field name="datosper_Pais_nacionalidad" class="java.lang.String"/>
+	<field name="datosper_tipo_libreta" class="java.lang.String"/>
+	<field name="datosper_numero_libreta" class="java.lang.String"/>
+	<field name="datosper_dm_libreta" class="java.lang.String"/>
+	<field name="datosper_Fecha_naciemiento" class="java.lang.String"/>
+	<field name="datosper_Pais_nacimiento" class="java.lang.String"/>
+	<field name="datosper_Depto_naciemiento" class="java.lang.String"/>
+	<field name="datosper_Municipio_nacimiento" class="java.lang.String"/>
+	<field name="datosper_Direccion_corresp" class="java.lang.String"/>
+	<field name="datosper_Pais_correspo" class="java.lang.String"/>
+	<field name="datosper_Mun_correspo" class="java.lang.String"/>
+	<field name="datosper_Dpto_correspo" class="java.lang.String"/>
+	<field name="datosper_Telefono" class="java.lang.String"/>
+	<field name="datosper_Email" class="java.lang.String"/>
+	<field name="datosper_usuario_usuario" class="java.lang.String"/>
+	<field name="ed_superior_id" class="java.lang.Integer"/>
+	<field name="ed_superior_modalidad" class="java.lang.String"/>
+	<field name="ed_superior_N_semestres" class="java.lang.Integer"/>
+	<field name="ed_superior_Graduado" class="java.lang.String"/>
+	<field name="ed_superior_Nombre_titulo" class="java.lang.String"/>
+	<field name="ed_superior_Terminacion" class="java.lang.String"/>
+	<field name="ed_superior_N_targeta" class="java.lang.String"/>
+	<field name="ed_superior_usuario_usuario" class="java.lang.String"/>
+	<field name="expelab_id_explaboral" class="java.lang.Integer"/>
+	<field name="expelab_Empresa" class="java.lang.String"/>
+	<field name="expelab_TipoEmpresa" class="java.lang.String"/>
+	<field name="expelab_PaisEmpresa" class="java.lang.String"/>
+	<field name="expelab_DepEmpresa" class="java.lang.String"/>
+	<field name="expelab_MuniEmpresa" class="java.lang.String"/>
+	<field name="expelab_CorreoEmp" class="java.lang.String"/>
+	<field name="expelab_Telefono" class="java.lang.String"/>
+	<field name="expelab_FIngreso" class="java.lang.String"/>
+	<field name="expelab_FechaRetiro" class="java.lang.String"/>
+	<field name="expelab_Cargo" class="java.lang.String"/>
+	<field name="expelab_Dependencia" class="java.lang.String"/>
+	<field name="expelab_Direccion" class="java.lang.String"/>
+	<field name="expelab_usuario_usuario" class="java.lang.String"/>
+	<field name="fbasica_Ncurso" class="java.lang.Integer"/>
+	<field name="fbasica_Titulo" class="java.lang.String"/>
+	<field name="fbasica_Bfecha_grado" class="java.lang.String"/>
+	<field name="fbasica_usuario_usuario" class="java.lang.String"/>
+	<field name="idioma_idlengua" class="java.lang.Integer"/>
+	<field name="idioma_nombre_idioma" class="java.lang.String"/>
+	<field name="idioma_lo_habla" class="java.lang.String"/>
+	<field name="idioma_lo_lee" class="java.lang.String"/>
+	<field name="idioma_lo_escribe" class="java.lang.String"/>
+	<field name="idioma_usuario_usuario" class="java.lang.String"/>
+	<field name="idioma_A_idlengua" class="java.lang.Integer"/>
+	<field name="idioma_A_nombre_idioma" class="java.lang.String"/>
+	<field name="idioma_A_lo_habla" class="java.lang.String"/>
+	<field name="idioma_A_lo_lee" class="java.lang.String"/>
+	<field name="idioma_A_lo_escribe" class="java.lang.String"/>
+	<field name="idioma_A_usuario_usuario" class="java.lang.String"/>
+	<field name="obervaciones_Obervacionescol" class="java.lang.String"/>
+	<field name="obervaciones_ciudad" class="java.lang.String"/>
+	<field name="obervaciones_fecha" class="java.lang.String"/>
+	<field name="obervaciones_usuario_usuario" class="java.lang.String"/>
+	<field name="tiemexp_usuario_usuario" class="java.lang.String"/>
+	<field name="tiemexp_spublicoyears" class="java.lang.Integer"/>
+	<field name="tiemexp_spublicomonths" class="java.lang.Integer"/>
+	<field name="tiemexp_sprivadoyears" class="java.lang.Integer"/>
+	<field name="tiemexp_sprivadomonths" class="java.lang.Integer"/>
+	<field name="tiemexp_tiyears" class="java.lang.Integer"/>
+	<field name="tiemexp_timonths" class="java.lang.Integer"/>
+	<field name="tiemexp_totalyears" class="java.lang.Integer"/>
+	<field name="tiemexp_toalmonths" class="java.lang.Integer"/>
+	<field name="usuario_usuario" class="java.lang.String"/>
+	<field name="usuario_email" class="java.lang.String"/>
+	<field name="usuario_password" class="java.lang.String"/>
+	<group name="Group1">
+		<groupExpression><![CDATA[(int)($V{REPORT_COUNT}/15)]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement style="SubTitle" x="47" y="13" width="506" height="24" forecolor="#CC0000" uuid="4d9cd047-5d69-45fa-8592-180d54291548"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["GroupField"]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement mode="Opaque" x="0" y="13" width="36" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="c5e9b369-6fd3-45d6-9807-15d79a3d74b3"/>
+				</rectangle>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="23"/>
+		</groupFooter>
+	</group>
+	<group name="Group2">
+		<groupExpression><![CDATA[(int)($V{REPORT_COUNT}/5)]]></groupExpression>
+		<groupHeader>
+			<band height="30">
+				<textField>
+					<reportElement style="SubTitle" x="0" y="4" width="460" height="20" uuid="902985fe-7d33-4e5c-b01c-369e34b01d23"/>
+					<textElement>
+						<font size="16" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["GroupField"]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="275" y="0" width="300" height="64" uuid="c822171c-42f8-42a5-9af4-f9bcff55dae3"/>
+				<imageExpression><![CDATA["leaf_banner_red.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="f1331695-58f6-40fe-b481-2c8c538befac"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Leaf Red Title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="117" y="46" width="157" height="22" uuid="ef605b66-2ecd-4300-bf3b-77fccdeb7e39"/>
+				<text><![CDATA[Leaf Red SubTitle]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="100" height="15" uuid="d7041370-e03c-47ae-8322-1517420622c1"/>
+				<text><![CDATA[Label]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="82a07d64-ea7d-49ff-b3d6-95f3535c66c6"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="196" y="2" width="100" height="20" uuid="10297487-343a-4dce-942a-f03cefda1f8f"/>
+				<text><![CDATA[expelab_Empresa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="398" y="2" width="100" height="20" uuid="045c13aa-4d65-4add-9918-bc7bf606224e"/>
+				<text><![CDATA[ed_superior_modalidad]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="111" splitType="Stretch">
+			<subreport>
+				<reportElement x="120" y="0" width="200" height="100" uuid="9be36131-e7b0-4fa6-b1b1-a30c337ce61f"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Explab.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="f709669e-8ee0-4a39-a8d3-f9e14d2e516f"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="98" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="457f50d3-6745-42d5-aa3b-afc98fff6853"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="57c7aff7-c060-41f5-b31c-cc854f51bd70"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="b07c360f-4119-4e5d-aafb-7ae3fcb694a8"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
