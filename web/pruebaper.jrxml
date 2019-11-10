@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e24fd317-479c-47e3-81e5-e0322765c33d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="mar" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     datosper.`nombres` AS datosper_nombres,
+     datosper.`oneapellido` AS datosper_oneapellido,
+     datosper.`twoapellido` AS datosper_twoapellido,
+     datosper.`Tipo_documento` AS datosper_Tipo_documento,
+     datosper.`N_documento` AS datosper_N_documento,
+     datosper.`Persona_genero` AS datosper_Persona_genero,
+     datosper.`Nacionalidad` AS datosper_Nacionalidad,
+     datosper.`Pais_nacionalidad` AS datosper_Pais_nacionalidad,
+     datosper.`tipo_libreta` AS datosper_tipo_libreta,
+     datosper.`numero_libreta` AS datosper_numero_libreta,
+     datosper.`dm_libreta` AS datosper_dm_libreta,
+     datosper.`Fecha_naciemiento` AS datosper_Fecha_naciemiento,
+     datosper.`Pais_nacimiento` AS datosper_Pais_nacimiento,
+     datosper.`Depto_naciemiento` AS datosper_Depto_naciemiento,
+     datosper.`Municipio_nacimiento` AS datosper_Municipio_nacimiento,
+     datosper.`Direccion_corresp` AS datosper_Direccion_corresp,
+     datosper.`Pais_correspo` AS datosper_Pais_correspo,
+     datosper.`Mun_correspo` AS datosper_Mun_correspo,
+     datosper.`Dpto_correspo` AS datosper_Dpto_correspo,
+     datosper.`Telefono` AS datosper_Telefono,
+     datosper.`Email` AS datosper_Email,
+     datosper.`usuario_usuario` AS datosper_usuario_usuario
+FROM
+     `datosper` datosper
+WHERE
+     usuario_usuario = $P{mar}]]>
+	</queryString>
+	<field name="datosper_nombres" class="java.lang.String"/>
+	<field name="datosper_oneapellido" class="java.lang.String"/>
+	<field name="datosper_twoapellido" class="java.lang.String"/>
+	<field name="datosper_Tipo_documento" class="java.lang.String"/>
+	<field name="datosper_N_documento" class="java.lang.String"/>
+	<field name="datosper_Persona_genero" class="java.lang.String"/>
+	<field name="datosper_Nacionalidad" class="java.lang.String"/>
+	<field name="datosper_Pais_nacionalidad" class="java.lang.String"/>
+	<field name="datosper_tipo_libreta" class="java.lang.String"/>
+	<field name="datosper_numero_libreta" class="java.lang.String"/>
+	<field name="datosper_dm_libreta" class="java.lang.String"/>
+	<field name="datosper_Fecha_naciemiento" class="java.lang.String"/>
+	<field name="datosper_Pais_nacimiento" class="java.lang.String"/>
+	<field name="datosper_Depto_naciemiento" class="java.lang.String"/>
+	<field name="datosper_Municipio_nacimiento" class="java.lang.String"/>
+	<field name="datosper_Direccion_corresp" class="java.lang.String"/>
+	<field name="datosper_Pais_correspo" class="java.lang.String"/>
+	<field name="datosper_Mun_correspo" class="java.lang.String"/>
+	<field name="datosper_Dpto_correspo" class="java.lang.String"/>
+	<field name="datosper_Telefono" class="java.lang.String"/>
+	<field name="datosper_Email" class="java.lang.String"/>
+	<field name="datosper_usuario_usuario" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="127" y="2" width="100" height="20" uuid="fb905127-d514-4c99-86a5-52a74d4ff745"/>
+				<text><![CDATA[datosper_Tipo_documento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="2" width="100" height="20" uuid="fe519e51-dff3-4ff8-b659-25bdf68b9e76"/>
+				<text><![CDATA[datosper_N_documento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="2" width="100" height="20" uuid="95bcdc2d-0c67-446c-ac67-3be43c3b5687"/>
+				<text><![CDATA[datosper_Persona_genero]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="127" y="34" width="100" height="20" uuid="1d4c92d4-901a-4906-bc4b-18ad661ce971"/>
+				<textFieldExpression><![CDATA[$F{datosper_Tipo_documento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="31" width="100" height="20" uuid="cec29562-aa3e-437d-957d-22274fec056b"/>
+				<textFieldExpression><![CDATA[$F{datosper_N_documento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="31" width="100" height="20" uuid="d66e26e8-daa1-4de3-ac19-7e9f8f149b95"/>
+				<textFieldExpression><![CDATA[$F{datosper_Persona_genero}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="72f92fbe-cf22-4681-961d-29a39e2e9d95">
-	<property name="ireport.zoom" value="1.464100000000004"/>
+	<property name="ireport.zoom" value="0.75"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="212"/>
+	<property name="ireport.y" value="26"/>
 	<parameter name="mar" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["C:\\Users\\PC\\Documents\\NetBeansProjects\\SavuCV-master\\web\\"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["C:\\Users\\Lenovo\\Documents\\NetBeansProjects\\SavuCV-master\\web\\"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
 		<![CDATA[SELECT
@@ -396,7 +396,7 @@ and obervaciones.usuario_usuario=$P{mar}]]>
 		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="97" splitType="Stretch">
+		<band height="69" splitType="Stretch">
 			<staticText>
 				<reportElement x="221" y="30" width="115" height="16" forecolor="#999999" uuid="a1443778-c604-4b21-8941-f0be78a315f0"/>
 				<textElement>
@@ -544,7 +544,7 @@ and obervaciones.usuario_usuario=$P{mar}]]>
 		</band>
 	</columnFooter>
 	<pageFooter>
-		<band height="168" splitType="Stretch">
+		<band height="132" splitType="Stretch">
 			<rectangle>
 				<reportElement x="1" y="3" width="555" height="20" forecolor="#FFFFFF" backcolor="#275C91" uuid="e8ed018b-7b80-47ab-b3c1-fa8dae4e2fc4"/>
 			</rectangle>
